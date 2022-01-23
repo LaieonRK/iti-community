@@ -1,0 +1,33 @@
+<div class="user-registration">
+  <form nz-form nzLayout="vertical" #f="ngForm" (ngSubmit)="submit()">
+    <nz-form-item>
+      <nz-form-label nzFor="username">Username</nz-form-label>
+      <nz-form-control nzErrorTip="Veuillez insérer votre identifiant">
+        <input class="ant-input" type="text" name="username" id="username" [(ngModel)]="model.username"
+          #username="ngModel" required='required'>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="password">Mot de passe</nz-form-label>
+      <nz-form-control nzErrorTip="Le mot de passe est manquant">
+        <input class="ant-input" type="password" name="password" id="password" [(ngModel)]="model.password"
+          #password="ngModel" required='required'>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzFor="confirm-password">Confirmation du mot de passe</nz-form-label>
+      <nz-form-control nzErrorTip="La confirmation du mot de passe est manquant">
+        <input class="ant-input" type="password" name="confirm-password" id="confirm-password"
+          [(ngModel)]="model.confirmPassword" #confirm="ngModel" required='required'>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button class="register-button" nz-button nzType="default" [disabled]="f.form.invalid">S'enregistrer</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <p class="divider">Déjà enregistré ?</p>
+  <button class="login-button" nz-button nzType="primary" (click)="goToLogin()">Connectez-vous</button>
+</div>

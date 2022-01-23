@@ -1,0 +1,28 @@
+.user-registration {
+    text-align: center;
+  
+    input {
+      width: 100%;
+    }
+  
+    .login-button,
+    .register-button {
+      width: 200px;
+    }
+    .divider {
+        position: relative;
+        &::before, &::after {
+            height: 0px;
+            width: 30%;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+            display: block;
+            position: absolute;
+            top: 50%;
+            content: "";
+        }
+        &::after {
+          right: 0;
+        }
+    }
+  }
+  

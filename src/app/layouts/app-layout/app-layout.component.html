@@ -1,0 +1,17 @@
+<div class="app-layout">
+  <div class="panel-drawer" [ngClass]="{opened: showDrawer}">
+    <!-- Afficher la liste des notifications -->
+  </div>
+  <div class="app-layout-panel-left">
+    <div class="panel-head">
+      <app-user-widget (toggleNotifications)="onToggleNotifications()"></app-user-widget>
+    </div>
+    <div class="panel-body">
+      <app-room-menu></app-room-menu>
+    </div>
+
+  </div>
+  <div class="app-layout-panel-main">
+    <router-outlet></router-outlet>
+  </div>
+</div>

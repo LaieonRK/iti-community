@@ -1,0 +1,42 @@
+@import "src/theme/variables";
+
+:host {
+  height: 100vh;
+}
+
+.app-layout {
+  height: 100%;
+  display: flex;
+
+  .panel-drawer {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    box-shadow: 1px 0 15px 0px rgba(0, 0, 0, .1);
+    left: 40px;
+    z-index: 1;
+    background-color: white;
+    transition: all .2s ease;
+
+    &.opened {
+      transform: translate(200px);
+    }
+  }
+
+  .app-layout-panel-left {
+    width: 240px;
+    background-color: @seconday_color;
+    position: relative;
+    z-index: 2;
+
+    .panel-head {
+      height: 200px;
+    }
+  }
+
+  .app-layout-panel-main {
+    flex: 1;
+  }
+}

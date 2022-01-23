@@ -1,0 +1,18 @@
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Profil" (nzOnCancel)="onCancel()" (nzOnOk)="onOk()">
+
+  <nz-upload [nzBeforeUpload]="onFileUpload" [nzAccept]="supportedTypes" class="profile-uploader">
+    <div class="profil-picture">
+      <i nz-icon nzType="edit"></i>
+      <img [src]="photoUrl">
+    </div>
+  </nz-upload>
+  <form nz-form nzLayout="vertical" #f="ngForm">
+    <nz-form-item>
+      <nz-form-label nzFor="name">Username</nz-form-label>
+      <nz-form-control nzErrorTip="Nom obligatoire">
+        <input class="ant-input" type="text" name="username" id="username" required [(ngModel)]="model.username"
+          #nom="ngModel">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>

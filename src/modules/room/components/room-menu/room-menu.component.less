@@ -1,0 +1,29 @@
+.room-menu {
+  padding: 10px;
+
+  .room-meanu-header {
+    display: flex;
+    margin-bottom: 10px;
+
+    h3 {
+      color: rgba(255, 255, 255, .8);
+      font-weight: normal;
+      flex: 1;
+      margin: 0;
+      ;
+    }
+  }
+
+  .menu-item {
+    margin: 5px 0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover, &.selected {
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}

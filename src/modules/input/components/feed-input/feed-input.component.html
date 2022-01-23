@@ -1,0 +1,20 @@
+<div class="feed-input">
+  <nz-tag nzMode="closeable" (nzOnClose)="onCloseTag()" *ngIf="file">
+    <span class="tag-inner">{{file?.name}}</span>
+  </nz-tag>
+  <nz-upload [nzBeforeUpload]="onFileUpload" [nzAccept]="supportedTypes" *ngIf="!file">
+    <button nz-button nzType="primary"><i nz-icon nzType="upload"></i> Photo, Video ou Audio</button>
+  </nz-upload>
+  <form class="feed-input-form" (ngSubmit)="send()">
+    <textarea (keydown)="onInputKeyDown($event)" (keyup)="onInputKeyUp($event)" nz-input nzAutosize class="ant-input"
+      name="message" #input nz-popover nzPopoverPlacement="topLeft" [nzPopoverContent]="contentTemplate"
+      [nzPopoverTrigger]="null" placeholder="Rédigez un nouveau message" [ngModel]="message"
+      (ngModelChange)="onMessageChanged($event)"></textarea>
+  </form>
+  <button nz-button nzType="primary" (click)="send()" [disabled]="!message && !file">Send</button>
+</div>
+<ng-template #contentTemplate>
+  <nav class="mentions">
+    <a (click)="chooseMention(user)" *ngFor="let user of users">{{user.username}}</a>
+  </nav>
+</ng-template>

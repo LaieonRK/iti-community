@@ -1,0 +1,22 @@
+<div class="post">
+  <div class="post-author-name"></div>
+
+  <!-- TIPS: [ngStyle]="{'background-image': url(...) }" -->
+  <div class="post-author-photo"></div>
+  <div class="post-date"></div>
+
+  <!-- TIPS: [ngClass]="{liked: [expression booléenne]}" -->
+  <div class="post-user-like">
+    <i nz-icon nzType="heart" [nzTheme]="post.liked ? 'fill' : 'outline'"></i>
+  </div>
+
+  <p class="post-text">
+    <!-- Afficher le texte du poste uniquement-->
+  </p>
+
+  <!-- Itérer sur les "attachements" du message -->
+  <div class="post-attachements" *ngFor="let element of post.message.attachements">
+    <!-- Utiliser ngIf pour afficher le bon composant en fonction du type d'élément-->
+  </div>
+  <div #anchor></div>
+</div>
