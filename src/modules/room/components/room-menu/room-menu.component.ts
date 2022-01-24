@@ -28,12 +28,13 @@ export class RoomMenuComponent implements OnInit {
 
   async ngOnInit() {
     this.rooms = await this.queries.getAll();
-    console.log("rooms" + this.rooms[0].id);
+    /*
     if (this.feedStore.value.roomId) {
       this.router.navigate(['/app/${this.feedStore.value.roomId}']);
     } else {
       this.router.navigate(['/app/${this.rooms[0].id}']);
-    }
+    }*/
+      this.router.navigate(['/app/${this.rooms[0].id}']);
   }
 
   goToRoom(room: Room) {
