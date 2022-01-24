@@ -37,18 +37,31 @@ export interface MessageYoutubeElement {
     videoId: string;
 }
 
+export interface MessageLinkElement {
+    type: 'link';
+    title: string;
+    image: string;
+    description: string;
+}
+
 export interface MessageMediaElement<T extends string> {
     type: T;
     url: string;
 }
 
 export interface MessageImageElement extends MessageMediaElement<'image'> {
+    type: 'image';
+    url: string;
 }
 
 export interface MessageVideoElement extends MessageMediaElement<'video'> {
+    type: 'video';
+    url: string;
 }
 
 export interface MessageAudioElement extends MessageMediaElement<'audio'> {
+    type: 'audio';
+    url: string;
 }
 
 export type MessageElement =

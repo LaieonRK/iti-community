@@ -9,7 +9,11 @@
     Remplacer [id de la room] par l'id de la room itérée
   -->
   <div class="menu-item" *ngFor="let room of rooms" [ngClass]="{'selected': (roomId$ | async) === '[room.id]'}">
-    <p (click)='goToRoom(room)'>{{room.name}}</p>
+    <p (click)="goToRoom(room)">{{room.name}}</p>
+  </div>
+
+  <div class="menu-item" *ngFor="let room of rooms$ | async" [ngClass]="{'selected': (roomId$ | async) === '[room.id]'}">
+    <p (click)="goToRoom(room)">{{room.name}}</p>
   </div>
 
 </div>

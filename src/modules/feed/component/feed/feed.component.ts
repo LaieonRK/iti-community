@@ -33,5 +33,12 @@ export class FeedComponent implements OnInit {
         });
       }
     })
+    /*
+    this.roomId$.subscribe(ob => {
+      this.socketService.onNewPost(
+      this.store.get(state => state.roomId),
+      post => {this.store.appendPost(post);})
+    });
+    */
   }
 }
