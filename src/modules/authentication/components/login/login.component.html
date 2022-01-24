@@ -2,26 +2,25 @@
   <form nz-form nzLayout="vertical" #f="ngForm" (submit)="submit()">
     <nz-form-item>
       <nz-form-label nzFor="username">Username</nz-form-label>
-      <nz-form-control nzErrorTip="Veuillez insérer votre identifiant">
-          <input class="ant-input" type="text" name="username" id="username" [(ngModel)]="model.username"
+      <nz-form-control [nzValidateStatus]="usernameValidateStatus" [nzErrorTip]="usernameErrorMessage" nzErrorTip="Veuillez insérer votre identifiant">
+          <input class="ant-input" type="text" name="username" id="username" #username="ngModel" [(ngModel)]="model.username"
           #username="ngModel" required="required">
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
       <nz-form-label nzFor="password">Mot de passe</nz-form-label>
-      <nz-form-control nzErrorTip="Le mot de passe est manquant">
-          <input class="ant-input" type="password" name="password" id="password" [(ngModel)]="model.password"
+      <nz-form-control [nzValidateStatus]="passwordValidateStatus" [nzErrorTip]="passwordErrorMessage">
+          <input class="ant-input" type="password" name="password" id="password" #password="ngModel" [(ngModel)]="model.password"
           #password="ngModel" required="required">
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-control NzMessageService="test">
+      <nz-form-control nzErrorTip="Le mot de passe est manquant">
         <button class="login-button" type="submit" nz-button nzType="default" [disabled]="f.form.invalid"
           (submit)="submit()">Connexion</button>
       </nz-form-control>
     </nz-form-item>
   </form>
   <p class="divider">Pas encore enregistré ?</p>
-
   <button class="register-button" nz-button nzType="primary" (click)="goToRegistration()">Créer un compte</button>
 </div>

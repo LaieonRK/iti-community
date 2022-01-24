@@ -30,6 +30,11 @@ export class UserService {
     });
   }
 
+  async isNotAvaible(username : string):Promise<Boolean>{    
+    return await this.queries.exists(username)
+  }
+
+
   async fetchInfo(): Promise<void> {
     const user = await this.queries.getUserInfo();
     this.store.mutate(s => {
@@ -42,9 +47,5 @@ export class UserService {
 
   search(token: string): Promise<User[]> {
     return this.queries.search(token);
-  }
-
-  async exists(username: string): Promise<Boolean> {
-    return this.queries.exists(username);
   }
 }
